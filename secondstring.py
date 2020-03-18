@@ -4,6 +4,6 @@
 
 mystring = input('Please input your desired text: ') # Asks users to input a string
 
-rev_mystring = mystring[-1::-2] # starts off on the last character of a string (-1 index) and skips 1 character to return every second character
+rev_mystring = mystring[::-2] # starts off on the last character of a string and skips 1 character to return every second character (in reverse)
 
 print(rev_mystring) # prints the new string

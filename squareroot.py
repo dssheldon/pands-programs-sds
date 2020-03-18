@@ -28,14 +28,24 @@ def sqrt():
 	
 	# The for loop will use the guess as a start and get closer to the answer after each iteration 
 	# (This is part of Newton's method which is meant to get closer to the appoximate root after each iteration)
+	# I start by iterating through the list using a while loop
+	# Based on feedback I added code break the for loop if a precision of 4 decimal places is reached
+	# 	It was tricky but I did this by adding the result of each iteration to a list and then comparing the last two values
+	#		of the list (rounded to 4 decimal places) until they were equal, at which point the loop breaks
 
-	for n in range (1,100):
+	l = [] # defined empty list as per documentation above
+	while True: # Decided to use a while loop instead of #	for n in range (1,100):
 		real_f = (positive_number_guess ** 2) - positive_number
 		derivative_f = 2 * positive_number_guess
 		positive_number_guess = positive_number_guess - (real_f / derivative_f)
+		l.append(positive_number_guess) # appends the result of the iteration to a list for use
+		if len(l) > 1: # if statement to avoid a null list error
+			if round(l[-1], 4) == round(l[-2], 4): # compares last two values of list (rounded to 4 decimals) for equality
+#				print(l)  # I have commented out this line, which proves the precision limit on the iteration is working
+				break # breaks out of the loop once the precision level has been reached
 
 	# printed the desired output
 	
-	print('The squareroot of', positive_number, 'is appoximately', round(positive_number_guess, 6))
+	print('The squareroot of', positive_number, 'is appoximately', round(positive_number_guess, 4))
 
 sqrt()  # calls the function
