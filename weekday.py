@@ -9,7 +9,7 @@ import datetime # Importing datetime module
 today_index = datetime.datetime.today().weekday()
 
 # The next line prepares a tuple of the names of the week to match the index value returned from the variable today_index.
-# This can also be prepared as a list. The purpose of using a tuplemis to make it non-mutable
+# This can also be prepared as a list. The purpose of using a tuple is to make it non-mutable
 
 week_names = ('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Thursday', 'Friday', 'Saturday', 'Sunday')
 
