@@ -1,12 +1,14 @@
 # Programming and Scripting - Weekly Assignments
-##### Owner: Sheldon D'Souza
+##### <u>Owner: Sheldon D'Souza</u>
+
+
 
 ## Objective
 
 The objective of this ReadMe is to set out the layout of the repository and it's contents.
 The repository is built up of weekly homework assignments given as part of the Programming and Scripting Module. Each assignment has it's own file which includes the code for the weekly assignment.
 
-I have included a lot explanation of how the code funtions within the .py files and therefore I will not repeat this here. Please refer to the indiviual python scripts within the files and the comments/doucmentation therein for details on how the codes operates as well as areas I found tricky. I have also included where approppriate references to researched code and solutions.
+I have included a lot explanation of how the code functions within the .py files and therefore I will not repeat this here. Please refer to the individual python scripts within the files and the comments/documentation therein for details on how the codes operates as well as areas I found tricky. I have also included where appropriate references to researched code and solutions.
 
 ## Contents of Repository
 
@@ -17,7 +19,7 @@ The task was to calculate the BMI of a person by taking inputs of a person's hei
 
 The program built on concepts on asking for input and using the input in conditional statements (if-then-else)
 
-I added functionlity in the program of printng out whether the person was underweight, ideal weight or overweight.
+I added functionality in the program of printing out whether the person was underweight, ideal weight or overweight.
 
 ### 2. Second String
 The task was to ask a user to input a string and output every letter in reverse order.
@@ -57,7 +59,7 @@ The formula requires a guess of the square root as and initial number to start o
 
 Newton's method gets closer to the square root the more it iterates, however in order to build an efficient program, it should stop after the required level of precision has been achieved. Therefore using a 'for' loop could be wasteful for some numbers input and incorrect for others.
 
-In order to achieve a precision level of (say) 4 decimal places, as used in the program, I created an empty list and appended the output of each iteration to the list (rounded down to the precision level). At each iteration the program compared the value appended to the previous value of the list. The program terminated when the current value of the list equalled the previous list value, which indicated that the precision level had been achieved.
+In order to achieve a precision level of (say) 4 decimal places, as used in the program, I created an empty list and appended the output of each iteration to the list (rounded down to the precision level). At each iteration the program compared the value appended to the previous value of the list. The program terminated when the current value of the list equaled the previous list value, which indicated that the precision level had been achieved.
 
 This program required a considerable amount of research and thought especially to achieve the make the program efficient, as described above.
 
@@ -71,16 +73,31 @@ I imported the  Path from the pathlib library so that the input could take a ful
 
 The user is asked for the path of the file they want to search and the character they want to search for (The default character was set as 'e').
 
-The program then opens the file using the 'with open' commandand uses the .read() method to read the contents of the file to a variable. The program then uses a 'for' loop to iterate though the text of the file and uses an 'if' statement to append matching characters to the list created.
+The program then opens the file using the 'with open' command and uses the .read() method to read the contents of the file to a variable. The program then uses a 'for' loop to iterate though the text of the file and uses an 'if' statement to append matching characters to the list created.
 
 Once the 'for' loop is complete the program prints  the length of the list, which is the number of instances of the search character.
 
 ### 7. Plotting
 The objective was to write a program that displays a plot of the functions f(x)=x, g(x)=x2 and h(x)=x3 in the range [0, 4] on the one set of axes.
 
+I imported the pyplot from the matplotlib library as well as numpy.
 
+The plot can be derived by using numpy as well as using a standard for loop to generate a list of the number from the function. I have  used both approaches although the numpy approach would be easier and more efficient to use.
 
+###### Generating the function via the 'for' loop:
 
+This entailed building a for loop within a and using the range function for the loop to iterate through the numbers 0 to 4 (inclusive). Each loop appends the number to one list and the cube of the number (for the h(x) function above) into the second list.
 
+###### Generating the function via numpy:
 
+Generated a numpy array for numbers from 0 to 4 (inclusive). The function was generated by performing calculations on the array.
 
+###### Plotting:
+
+Used the pyplot plot function from matplotlib to generate the plots using arguments of the function to generate the colour of the line, the label of the plot (which was used to populate the legend), line style (or the type of the line plotted e.g. dashed etc.) and line width.
+
+Used further plotting functions to add a title to the plot (using arguments to specify the fontsize and the location of the title), set the x and y labels, added a legend and set the x starting limit as zero.
+
+By adding the code for the plots consecutively using the stateful approach of matplotlib, the plots were superimposed over each other this adding all three plots on the same axes.
+
+Finally added the tight_layout functionality and set the plot to show.
